@@ -5,19 +5,20 @@ const container = document.querySelector(".container");
 function cloneRow(){
     const divRow = document.createElement("div");
     divRow.classList.add("divRow");
-    container.appendChild(divRow)
+    const cloneDivRow = divRow.cloneNode(true);
+        container.appendChild(cloneDivRow)
+        for(let i = 0; i<16;i++){
+            cloneDiv(cloneDivRow);
+        }
 }
 
-function cloneDiv(){
+function cloneDiv(currentRow){
     const div = document.createElement("div");
     div.classList.add("divBox");
-    divRow.appendChild(div);
+    currentRow.appendChild(div);
 }
 
-for(let i = 0; i<16; i++){
+
+for(let i = 0; i < 16; i++){
     cloneRow();
-    for(let i = 0; i<16;i++){
-        cloneDiv();
-    }
 }
-
