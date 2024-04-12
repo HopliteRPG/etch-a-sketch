@@ -11,20 +11,15 @@ function cloneRow(){
 }
 
 function cloneDiv(currentRow){
-    const div = document.createElement("div");
-    div.classList.add("divBox");
-    currentRow.appendChild(div);
-    div.addEventListener('mouseover', (divBox) => {
+    const divBox = document.createElement("div");
+    divBox.classList.add("divBox");
+    currentRow.appendChild(divBox);
+    divBox.addEventListener('mouseover', (divBox) => {
         divBox.target.style.backgroundColor = "black";
 
     })
 
 }
-
-
-
-
-
 
 
 
