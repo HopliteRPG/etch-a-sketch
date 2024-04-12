@@ -1,4 +1,5 @@
 const container = document.querySelector(".container");
+const createNewGridBtn = document.querySelector(".create-new-grid-btn");
 
 function cloneRow(){
     const divRow = document.createElement("div");
@@ -21,7 +22,13 @@ function cloneDiv(currentRow){
 
 }
 
+createNewGridBtn.addEventListener("click", () => {
+    createGrid()
+})
 
+function createGrid(){
+    console.log("button pressed")
+}
 
 for(let i = 0; i < 16; i++){
     cloneRow();
