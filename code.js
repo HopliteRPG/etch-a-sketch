@@ -14,7 +14,10 @@ function cloneDiv(currentRow){
     const div = document.createElement("div");
     div.classList.add("divBox");
     currentRow.appendChild(div);
-    div.addEventListener('mouseover', changeColor)
+    div.addEventListener('mouseover', (divBox) => {
+        divBox.target.style.backgroundColor = "black";
+
+    })
 
 }
 
@@ -22,9 +25,6 @@ function cloneDiv(currentRow){
 
 
 
-function changeColor(divBox){
-    divBox.target.style.backgroundColor = "black";
-}
 
 
 
