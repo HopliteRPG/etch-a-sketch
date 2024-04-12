@@ -10,6 +10,9 @@
     border-width: 1px;
 }
 
+.divBox:hover{
+}
+
 .divRow {
     display: flex;
     flex-direction: row;
