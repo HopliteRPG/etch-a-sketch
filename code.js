@@ -1,12 +1,12 @@
 const container = document.querySelector(".container");
 const createNewGridBtn = document.querySelector(".create-new-grid-btn");
 
-function cloneRow(){
+function cloneRow(divBoxNum){
     const divRow = document.createElement("div");
     divRow.classList.add("divRow");
     const cloneDivRow = divRow.cloneNode(true);
         container.appendChild(cloneDivRow)
-        for(let i = 0; i<16;i++){
+        for(let i = 0; i<divBoxNum;i++){
             cloneDiv(cloneDivRow);
         }
 }
@@ -27,11 +27,20 @@ createNewGridBtn.addEventListener("click", () => {
 })
 
 function createGrid(){
-    console.log("button pressed")
+    container.innerHTML = ""
+let rowNum = prompt("Enter the amount of rows you would like the grid to have");
+if(rowNum > 0 && rowNum < 101){
+    let divBoxNum = prompt("Enter a positive number that is less than 101");
+    if(divBoxNum > 0 && divBoxNum < 101){
+        for(let i = 0; i < rowNum; i++){
+            cloneRow(divBoxNum);
+        }
+    }
+}
+else{
 }
 
-for(let i = 0; i < 16; i++){
-    cloneRow();
+
 }
 
 
