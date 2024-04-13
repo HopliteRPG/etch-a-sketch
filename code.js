@@ -27,18 +27,25 @@ createNewGridBtn.addEventListener("click", () => {
 })
 
 function createGrid(){
-    container.innerHTML = ""
-let rowNum = prompt("Enter the amount of rows you would like the grid to have");
-if(rowNum > 0 && rowNum < 101){
-    let divBoxNum = prompt("Enter a positive number that is less than 101");
-    if(divBoxNum > 0 && divBoxNum < 101){
-        for(let i = 0; i < rowNum; i++){
-            cloneRow(divBoxNum);
+    container.innerHTML = "";
+    let rowNum = prompt("Enter the amount of rows you would like the grid to have (minimum of 1 and a maximum of 100)");
+    if(rowNum > 0 && rowNum < 101){
+        let divBoxNum = prompt("Enter how many boxes you would like in each row (minimum of 1 and a maximum of 100)");
+        if(divBoxNum > 0 && divBoxNum < 101){
+            for(let i = 0; i < rowNum; i++){
+                cloneRow(divBoxNum);
+            }
+        }
+        else{
+            alert("Enter a number with a minimum of 1 and a maximum of 100 for both the amount of rows and the amount of boxes. Restarting Process");
+            createGrid();
         }
     }
-}
-else{
-}
+    else{
+        alert("Enter a number with a minimum of 1 and a maximum of 100 for both the amount of rows and the amount of boxes. Restarting Process");
+        createGrid();
+    }
+
 
 
 }
